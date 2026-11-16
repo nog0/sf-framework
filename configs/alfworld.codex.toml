@@ -1,0 +1,22 @@
+[task]
+kind = "alfworld"
+root = "../data/alfworld"
+split = "test"
+# Explicitly expose legal commands. Set generation to evaluate without this help.
+action_mode = "admissible"
+games_subdir = "json_2.1.1"
+
+[agent]
+kind = "codex"
+auth = "chatgpt"
+model = "gpt-6-luna"
+reasoning_effort = "medium"
+# Override with sf run --model ID; omit model to follow the Codex user default.
+timeout_seconds = 1800
+max_tool_calls = 300
+
+[run]
+workers = 1
+output = "../runs/alfworld-codex-luna-medium"
+episodes = 1
+max_steps = 50

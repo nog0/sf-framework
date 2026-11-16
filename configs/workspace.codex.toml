@@ -1,0 +1,30 @@
+[task]
+kind = "workspace"
+root = "../examples/workspace"
+
+[execution]
+kind = "workspace"
+
+[execution.options]
+image = "ubuntu:24.04"
+command_timeout_seconds = 30
+
+[evaluation]
+kind = "file_text"
+
+[evaluation.options]
+path = "answer.txt"
+expected = "14"
+
+[agent]
+kind = "codex"
+auth = "chatgpt"
+model = "gpt-6-luna"
+reasoning_effort = "medium"
+timeout_seconds = 180
+max_model_calls = 20
+max_tool_calls = 20
+
+[run]
+episodes = 1
+output = "../runs/workspace-codex-demo"

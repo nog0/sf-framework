@@ -1,0 +1,26 @@
+[task]
+kind = "skillflow"
+root = "../data/skillflow/test_tasks"
+split = "local"
+
+[execution]
+kind = "harbor"
+
+[execution.options]
+command_timeout_seconds = 120
+
+[evaluation]
+kind = "harbor"
+
+[agent]
+kind = "codex"
+auth = "chatgpt"
+model = "gpt-6-luna"
+reasoning_effort = "medium"
+timeout_seconds = 1800
+max_model_calls = 100
+max_tool_calls = 150
+
+[run]
+episodes = 1
+output = "../runs/skillflow-codex"

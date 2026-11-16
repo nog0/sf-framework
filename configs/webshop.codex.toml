@@ -1,0 +1,20 @@
+[task]
+kind = "webshop"
+root = "../vendor/WebShop"
+split = "test"
+catalog = "full"
+seed = 233
+
+[agent]
+kind = "codex"
+auth = "chatgpt"
+model = "gpt-6-luna"
+reasoning_effort = "medium"
+timeout_seconds = 1800
+max_tool_calls = 400
+
+[run]
+workers = 1
+output = "../runs/webshop-codex-luna-medium"
+episodes = 1
+max_steps = 100

@@ -1,0 +1,6 @@
+name: sf-framework
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
